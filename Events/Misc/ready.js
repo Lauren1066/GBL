@@ -63,8 +63,6 @@ module.exports = {
           if (r !== undefined) {
             if (r.type === "live") {
               if (IsLiveMemory === false || IsLiveMemory === undefined) {
-                console.log(r);
-
                 const users = await twitch.getUsers(r.user_login);
                 const title = r.title ? r.title.toString() : "No Title Set";
                 const gameName = r.game_name ? r.game_name : "No Game Set";
@@ -79,14 +77,11 @@ module.exports = {
                   .addFields({ name: "Game: ", value: gameName })
                   .setImage(r.getThumbnailUrl());
                 ChannelAnnounceLive.send({ content: `<@&988875575638777919>`, embeds: [embed] });
-              } else if (IsLiveMemory === true) {
-              } else {
               }
             } else {
               if (IsLiveMemory === true) {
                 user.live = false;
                 user.save();
-              } else {
               }
             }
           } else {

@@ -6,8 +6,6 @@ module.exports = {
   once: false,
   async execute(oldMember, newMember) {
     const logsChannel = await oldMember.guild.channels.fetch(constantsfile.logsChannel);
-    console.log(oldMember);
-    console.log(newMember);
 
     if (oldMember.nickname != newMember.nickname) {
       if (oldMember.nickname == undefined) {

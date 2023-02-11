@@ -8,7 +8,6 @@ module.exports = {
   async execute(oldUser, newUser) {
     const guild = await client.guilds.fetch("988867117195599902");
     const logsChannel = await guild.channels.fetch(constantsfile.logsChannel);
-    console.log(oldUser);
 
     if (oldUser.username != newUser.username) {
       const embed = new EmbedBuilder()
