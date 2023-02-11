@@ -6,8 +6,15 @@ module.exports = {
   name: "userUpdate",
   once: false,
   async execute(oldUser, newUser) {
-    const guild = await client.guilds.fetch("988867117195599902");
-    const logsChannel = await guild.channels.fetch(constantsfile.logsChannel);
+    if (oldUser.guild.id == constantsfile.mainServerID) {
+      var logsChannel = await oldUser.guild.channels.fetch(constantsfile.mainLogsChannel);
+    } else if (oldUser.guild.id == constantsfile.ambulanceServerID) {
+      var logsChannel = await oldUser.guild.channels.fetch(constantsfile.ambulanceLogsChannel);
+    } else if (oldUser.guild.id == constantsfile.fireServerID) {
+      var logsChannel = await oldUser.guild.channels.fetch(constantsfile.fireLogsChannel);
+    } else if (oldUser.guild.id == constantsfile.policeServerID) {
+      var logsChannel = await oldUser.guild.channels.fetch(constantsfile.policeLogsChannel);
+    }
 
     if (oldUser.username != newUser.username) {
       const embed = new EmbedBuilder()

@@ -20,6 +20,12 @@ const whitelistedRoleID = "1054864627479097495";
 
 const mainServerID = "988867117195599902";
 
+const policeServerID = "1054129966096322691";
+
+const ambulanceServerID = "1025411354028421160";
+
+const fireServerID = "1054141143161507901";
+
 // Level Information
 
 const minXp = 8;
@@ -29,7 +35,13 @@ const maxXp = 12;
 const cooldownInMS = 10000;
 
 // Channels
-const logsChannel = "1072359773753835540";
+const mainLogsChannel = "1072359773753835540";
+
+const policeLogsChannel = "1074091028790910986";
+
+const ambulanceLogsChannel = "1074091662126616636";
+
+const fireLogsChannel = "1074091595902750792";
 
 module.exports = {
   // User IDS
@@ -54,6 +66,12 @@ module.exports = {
 
   mainServerID: mainServerID,
 
+  policeServerID: policeServerID,
+
+  fireServerID: fireServerID,
+
+  ambulanceServerID: ambulanceServerID,
+
   // Level Information
 
   minXp: minXp,
@@ -63,5 +81,12 @@ module.exports = {
   cooldownInMS: cooldownInMS,
 
   // Channels
-  logsChannel: logsChannel,
+
+  mainLogsChannel: mainLogsChannel,
+
+  fireLogsChannel: fireLogsChannel,
+
+  policeLogsChannel: policeLogsChannel,
+
+  ambulanceLogsChannel: ambulanceLogsChannel,
 };

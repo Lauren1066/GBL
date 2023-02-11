@@ -20,7 +20,6 @@ module.exports = {
         });
       }
     } else if (interaction.isButton() && interaction.customId == "verify") {
-      console.log(interaction.customId);
       const user = await interaction.guild.members.fetch(interaction.user.id);
       const role = await interaction.guild.roles.fetch("988875575638777919");
       await user.roles.add(role);

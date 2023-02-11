@@ -5,7 +5,16 @@ module.exports = {
   name: "messageUpdate",
   once: false,
   async execute(oldMessage, newMessage) {
-    const logsChannel = await oldMessage.guild.channels.fetch(constantsfile.logsChannel);
+    if (oldMessage.guild.id == constantsfile.mainServerID) {
+      var logsChannel = await oldMessage.guild.channels.fetch(constantsfile.mainLogsChannel);
+    } else if (oldMessage.guild.id == constantsfile.ambulanceServerID) {
+      var logsChannel = await oldMessage.guild.channels.fetch(constantsfile.ambulanceLogsChannel);
+    } else if (oldMessage.guild.id == constantsfile.fireServerID) {
+      var logsChannel = await oldMessage.guild.channels.fetch(constantsfile.fireLogsChannel);
+    } else if (oldMessage.guild.id == constantsfile.policeServerID) {
+      var logsChannel = await oldMessage.guild.channels.fetch(constantsfile.policeLogsChannel);
+    }
+
     const embed = new EmbedBuilder()
       .setTitle("Message Edited")
       .addFields(

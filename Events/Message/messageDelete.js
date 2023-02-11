@@ -5,7 +5,16 @@ module.exports = {
   name: "messageDelete",
   once: false,
   async execute(message) {
-    const logsChannel = await message.guild.channels.fetch(constantsfile.logsChannel);
+    if (message.guild.id == constantsfile.mainServerID) {
+      var logsChannel = await message.guild.channels.fetch(constantsfile.mainLogsChannel);
+    } else if (message.guild.id == constantsfile.ambulanceServerID) {
+      var logsChannel = await message.guild.channels.fetch(constantsfile.ambulanceLogsChannel);
+    } else if (message.guild.id == constantsfile.fireServerID) {
+      var logsChannel = await message.guild.channels.fetch(constantsfile.fireLogsChannel);
+    } else if (message.guild.id == constantsfile.policeServerID) {
+      var logsChannel = await message.guild.channels.fetch(constantsfile.policeLogsChannel);
+    }
+
     const embed = new EmbedBuilder()
       .setTitle("Message Deleted")
       .addFields(
