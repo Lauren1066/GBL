@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "@canvas-fonts/arial-bold": "^1.0.4",
+    "@canvas-fonts/arial-bold-italic": "^1.0.4",
+    "@canvas-fonts/noteworthy": "^1.0.4",
+    "@discordjs/rest": "^1.5.0",
+    "canvacord": "^5.4.8",
+    "discord-canvas": "^1.5.2",
+    "discord-card-canvas": "^1.2.3",
+    "discord-welcome-card": "^4.8.1",
+    "discord.js": "^14.7.1",
+    "fs": "^0.0.1-security",
+    "mongoose": "^6.8.3",
+    "nekos.life": "^3.0.0",
+    "node-twitch": "^0.5.0",
+    "path": "^0.12.7",
+    "random-number": "^0.0.9"
+  }
+}
