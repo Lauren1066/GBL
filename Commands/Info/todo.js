@@ -8,9 +8,7 @@ module.exports = {
 
     const embed = new EmbedBuilder().setTitle(guild.name).setThumbnail(guild.iconURL({ format: "png" })).setDescription(`
 **ALL SERVERS:**
-Logging of invites (Who invited + the link)
-Message logs (Edited + Deleted)
-Member logs (Joins + leaves + edited & deleted messages)
+Member logs (Joins + leaves)
 Role updates (Give Roles + Remove Roles + Create Role + Deleted Role)
       `);
     interaction.reply({ embeds: [embed] });
