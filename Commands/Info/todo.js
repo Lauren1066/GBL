@@ -6,8 +6,6 @@ module.exports = {
   async execute(interaction) {
     const guild = await interaction.client.guilds.fetch(constantsFile.mainServerID);
 
-    const owner = await guild.members.fetch(guild.ownerId);
-
     const embed = new EmbedBuilder().setTitle(guild.name).setThumbnail(guild.iconURL({ format: "png" })).setDescription(`
 **ALL SERVERS:**
 Logging of invites (Who invited + the link)
