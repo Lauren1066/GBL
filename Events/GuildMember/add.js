@@ -1,11 +1,10 @@
+const { AttachmentBuilder } = require("discord.js");
+const Canvas = require("canvas");
+const { registerFont } = require("canvas");
 module.exports = {
   name: "guildMemberAdd",
   once: false,
   async execute(member) {
-    const { AttachmentBuilder } = require("discord.js");
-    const Canvas = require("canvas");
-    const { registerFont } = require("canvas");
-
     const path = require("path");
     if (member.guild.id == "988867117195599902") {
       const channel = await member.guild.channels.fetch("988882440443555850");
@@ -55,6 +54,14 @@ module.exports = {
         content: `Hey <@${member.user.id}>, welcome to **Great British Life**! Go to <#1061046785893744721> and verify!`,
         files: [attachment],
       });
+    } else if (member.guild.id == "1054141143161507901") {
+      try {
+        await member.roles.add("1054141143492857938");
+        await member.roles.add("1054141143492857939");
+        await member.roles.add("1054141143161507909");
+      } catch {
+        console.log("Couldn't add roles in LFB");
+      }
     }
   },
 };
